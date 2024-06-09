@@ -18,14 +18,14 @@ namespace AppMobile.Controllers
 
         // GET: api/Sorteios
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Sorteio>>> GetSorteios()
+        public async Task<ActionResult<IEnumerable<Sorteios>>> GetSorteios()
         {
             return await _context.Sorteios.ToListAsync();
         }
 
         // GET: api/Sorteios/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Sorteio>> GetSorteio(int id)
+        public async Task<ActionResult<Sorteios>> GetSorteio(int id)
         {
             var sorteio = await _context.Sorteios.FindAsync(id);
 
@@ -39,7 +39,7 @@ namespace AppMobile.Controllers
 
         // POST: api/Sorteios
         [HttpPost]
-        public async Task<ActionResult<Sorteio>> PostSorteio(Sorteio sorteio)
+        public async Task<ActionResult<Sorteios>> PostSorteio(Sorteios sorteio)
         {
             _context.Sorteios.Add(sorteio);
             await _context.SaveChangesAsync();

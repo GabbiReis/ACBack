@@ -18,16 +18,16 @@ namespace AppMobile.Controllers
 
         // GET: api/Convites
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Convite>>> GetConvites()
+        public async Task<ActionResult<IEnumerable<Convites>>> GetConvites()
         {
-            return await _context.Convites.ToListAsync();
+            return await _context.Convite.ToListAsync();
         }
 
         // GET: api/Convites/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Convite>> GetConvite(int id)
+        public async Task<ActionResult<Convites>> GetConvite(int id)
         {
-            var convite = await _context.Convites.FindAsync(id);
+            var convite = await _context.Convite.FindAsync(id);
 
             if (convite == null)
             {
@@ -39,9 +39,9 @@ namespace AppMobile.Controllers
 
         // POST: api/Convites
         [HttpPost]
-        public async Task<ActionResult<Convite>> PostConvite(Convite convite)
+        public async Task<ActionResult<Convites>> PostConvite(Convites convite)
         {
-            _context.Convites.Add(convite);
+            _context.Convite.Add(convite);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(nameof(GetConvite), new { id = convite.ID }, convite);
@@ -51,13 +51,13 @@ namespace AppMobile.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteConvite(int id)
         {
-            var convite = await _context.Convites.FindAsync(id);
+            var convite = await _context.Convite.FindAsync(id);
             if (convite == null)
             {
                 return NotFound();
             }
 
-            _context.Convites.Remove(convite);
+            _context.Convite.Remove(convite);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -65,7 +65,7 @@ namespace AppMobile.Controllers
 
         private bool ConviteExists(int id)
         {
-            return _context.Convites.Any(e => e.ID == id);
+            return _context.Convite.Any(e => e.ID == id);
         }
     }
 }
