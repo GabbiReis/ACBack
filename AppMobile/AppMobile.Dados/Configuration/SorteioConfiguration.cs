@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AppMobile.AppMobile.Dados.Configuration
 {
-    public class SorteioConfiguration : IEntityTypeConfiguration<Sorteio>
+    public class SorteioConfiguration : IEntityTypeConfiguration<Sorteios>
     {
-        public void Configure(EntityTypeBuilder<Sorteio> builder)
+        public void Configure(EntityTypeBuilder<Sorteios> builder)
         {
             builder.ToTable("Sorteios", "AppMobile");
             builder.HasKey(s => s.ID);

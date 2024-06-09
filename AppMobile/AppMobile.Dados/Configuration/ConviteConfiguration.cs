@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AppMobile.AppMobile.Dados.Configuration
 {
-    public class ConviteConfiguration : IEntityTypeConfiguration<Convite>
+    public class ConviteConfiguration : IEntityTypeConfiguration<Convites>
     {
-        public void Configure(EntityTypeBuilder<Convite> builder)
+        public void Configure(EntityTypeBuilder<Convites> builder)
         {
             builder.ToTable("Convites", "AppMobile");
             builder.HasKey(c => c.ID);
